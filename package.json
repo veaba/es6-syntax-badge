@@ -1,6 +1,6 @@
 {
   "name": "es-syntax-badge",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "displayName": "ES Syntax Badge",
   "description": "Badge for showing which ES syntax features are supported by a browser",
   "publisher": "veaba",
@@ -41,7 +41,9 @@
     "release": "bumpp && nr publish"
   },
   "activationEvents": [
-    "onStartupFinished"
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onCommand:extension.activate"
   ],
   "contributes": {
     "commands": [],

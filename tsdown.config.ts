@@ -6,7 +6,7 @@ export default defineConfig({
   unbundle: false,
   exports: false,
   sourcemap: true,
-  external: ['reactive-vscode', 'vscode'],
+  external: ['vscode'],
   outExtensions: () => {
     return {
       js: '.js',
