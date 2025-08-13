@@ -1,0 +1,71 @@
+{
+  "name": "es-syntax-badge",
+  "version": "0.0.1",
+  "displayName": "ES Syntax Badge",
+  "description": "Badge for showing which ES syntax features are supported by a browser",
+  "publisher": "veaba",
+  "author": "veaba",
+  "license": "MIT",
+  "homepage": "https://github.com/veaba/es-syntax-badge",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/veaba/es-syntax-badge"
+  },
+  "bugs": {
+    "url": "https://github.com/veaba/es-syntax-badge/issues"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/index.js",
+  "icon": "icon/icon.png",
+  "files": [
+    "LICENSE.md",
+    "dist/*",
+    "icons/*"
+  ],
+  "engines": {
+    "vscode": "^1.97.0"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch --sourcemap ",
+    "prepare": "nr update",
+    "update": "vscode-ext-gen --output src/generated/meta.ts",
+    "lint": "eslint .",
+    "vscode:prepublish": "nr build",
+    "publish": "vsce publish --no-dependencies",
+    "pack": "vsce package --no-dependencies",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp && nr publish"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [],
+    "configuration": {
+      "type": "object",
+      "title": "es-syntax-badge",
+      "properties": {}
+    }
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.2.1",
+    "@antfu/ni": "^23.3.1",
+    "@types/node": "^22.13.4",
+    "@types/vscode": "^1.97.0",
+    "@vscode/vsce": "^3.2.2",
+    "bumpp": "^10.0.3",
+    "eslint": "^9.20.1",
+    "esno": "^4.8.0",
+    "pnpm": "^10.4.1",
+    "reactive-vscode": "^0.2.10",
+    "tsdown": "0.13.3",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5",
+    "vscode-ext-gen": "^1.0.0"
+  }
+}
